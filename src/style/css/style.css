@@ -1,0 +1,106 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  background: none;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  list-style: none;
+  text-decoration: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  transition: background-color 5s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.sounds-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 10px;
+}
+
+.sound-tile {
+  width: 100px;
+  height: 120px;
+}
+.sound-tile .sound-button {
+  position: relative;
+  z-index: 100;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  overflow: hidden;
+  color: white;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.sound-tile .sound-button img {
+  width: 50%;
+  height: 50%;
+  filter: grayscale(100%) invert(1) brightness(10);
+  margin-bottom: 12px;
+}
+.sound-tile .sound-button:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  left: 0;
+  background-color: white;
+  opacity: 0.2;
+}
+.sound-tile .sound-button:hover {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+.sound-tile .sound-button.playing:before {
+  opacity: 0.4;
+}
+
+.volume-control {
+  display: none;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 12px;
+  margin-top: 4px;
+  border: none;
+  background: none;
+  outline: none;
+}
+.volume-control.playing {
+  display: block;
+}
+.volume-control::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  transform: translateY(-5px);
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.volume-control::-webkit-slider-runnable-track {
+  height: 2px;
+  border-radius: 1px;
+  background: white;
+}/*# sourceMappingURL=style.css.map */
